@@ -22,7 +22,8 @@ pipeline {
         branch 'PR-*'
       }
       steps {
-        sh 'git remote set-url origin git@github.com:practicaljenkins/sample-php-project.git'
+        sh 'git remote set-url origin git@github.com:chaconjav/sample-proj.git
+        //                            git@github.com:practicaljenkins/sample-php-project.git'
         sh 'git remote set-branches --add origin ${CHANGE_TARGET}'
         sh 'git fetch origin'
         sh 'git checkout ${CHANGE_TARGET}'
