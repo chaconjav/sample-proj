@@ -22,6 +22,8 @@ pipeline {
         branch 'PR-*'
       }
       steps {
+        sh eval "$(ssh-agent -s)"
+        sh ssh-add ~/.ssh/id_rsa
         sh 'git remote set-url origin git@github.com:chaconjav/sample-proj.git'
         sh 'git remote set-branches --add origin ${CHANGE_TARGET}'
         sh 'git fetch origin'
